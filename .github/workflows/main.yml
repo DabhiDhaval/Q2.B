@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/static-site ./Q2
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/static-site .
 
       - name: Push Image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/static-site
